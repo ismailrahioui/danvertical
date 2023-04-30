@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SliderComponent from '../components/swiper'
+import SliderComp from '../components/swipercom'
+import Skills from '../components/skills';
+import Footer from '../components/Footer'
+
+
+
+---
+
+<Layout title="Home">
+    <SliderComponent client:load/>
+	<SliderComp client:load/>
+	<Skills client:load/>
+	<Footer client:load/>
+</Layout>
+
+
