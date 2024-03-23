@@ -1143,10 +1143,10 @@ section {
 
 .contact .info-box i {
   font-size: 32px;
-  color: #cc1616;
+  color: #ffc107;
   border-radius: 50%;
   padding: 8px;
-  border: 2px dotted #f5a0a0;
+  border: 2px dotted #f9e097;
 }
 
 .contact .info-box h3 {
@@ -1218,7 +1218,7 @@ section {
 
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
-  background-color: #cc1616;
+  background-color: #dadada;
 }
 
 .contact .php-email-form input {
@@ -1230,7 +1230,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #cc1616;
+  background: #ffc107;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -1238,7 +1238,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: #e82d2d;
+  background: #f9e097;
 }
 
 @keyframes animate-loading {
