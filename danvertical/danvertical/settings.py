@@ -28,7 +28,8 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = []
+
 
 # Application definition
 
@@ -76,7 +77,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'danvertical.wsgi.app'
+WSGI_APPLICATION = 'danvertical.wsgi.application'
 
 
 # Database
@@ -125,7 +126,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR,'static')
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build' ,'static')
 MEDIA_URL = 'media/'
 MEDIA_ROOT=BASE_DIR /' media'
