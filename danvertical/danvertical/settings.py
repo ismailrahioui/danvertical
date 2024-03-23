@@ -76,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'danvertical.wsgi.application'
+WSGI_APPLICATION = 'danvertical.wsgi.app'
 
 
 # Database
