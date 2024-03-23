@@ -1,0 +1,344 @@
+{% extends 'core/base.html'%} {%load static%} {% block title%} Home {%endblock%}
+{%block content%}
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+  <div
+    class="container position-relative"
+    data-aos="fade-up"
+    data-aos-delay="500"
+  >
+    <h1 style="width: 53%">
+      <span style="font-size: 5rem" class="fw-light"> +10</span>
+      <span class="fw-light">AÑOS DE EXPERIENCIA</span> REHABILITANDO EDIFICIOS
+    </h1>
+    <h2 class="text-break fw-light fst-italic" style="width: 40%">
+      En Dan Vertical nos dedicamos a la rehabilitación de edificios. Realizamos
+      una amplia variedad de servicios desde la rehabilitación integral de
+      edificios hasta otros específicos como la reparación de bajantes, la
+      restauración y pintura de fachadas en viviendas, edificios, industriales y
+      mucho más. Mejoramos presupuestos !
+    </h2>
+    <a href="#about" class="btn-get-started scrollto">comenzar</a>
+  </div>
+</section>
+<!-- End Hero -->
+<main id="main">
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-title">
+        <span>que somos</span>
+        <h2>que somos</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left">
+          <img
+            src="{% static 'assets/img/about.jpg'%}"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <div
+          class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content"
+          data-aos="fade-right"
+        >
+          <h3>Dan vertical</h3>
+
+          <ul class="fst-italic">
+            <li>
+              Somos una empresa con más de 10 años de experiencia en la
+              rehabilitación integral de edificios en Barcelona, todo nuestro
+              personal formado,equipos especializados en trabajo vertical con
+              formación en IRATA.
+            </li>
+            <li>
+              Todo el trabajo se lleva a cabo utilizando técnicas de cuerda sin
+              necesidad de andamios u otros tipos de estructuras, por lo que
+              nuestro trabajo es más limpio y más conveniente para los clientes.
+            </li>
+            <li>
+              Este método de trabajo también permite reducir los costos y
+              acelerar el trabajo.
+            </li>
+            <li>
+              A estas ventajas se suman la especialización y la experiencia de
+              todo nuestro equipo, lo que permite garantizar un servicio con
+              excelentes resultados y total seguridad en su rendimiento.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <i class="bi bi-check-circle"></i> Satisfacción para nuestros
+              clientes 100%
+            </li>
+            <li>
+              <i class="bi bi-check-circle"></i> equipo técnico especializado
+            </li>
+            <li>
+              <i class="bi bi-check-circle"></i> Añadimos valor a nuestra
+              profesionalismo
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End About Section -->
+
+  <!-- ======= Clients Section ======= -->
+  <section id="clients" class="clients">
+    <div class="container" data-aos="zoom-in">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-2 col-md-4 col-6">
+          <img
+            src="{% static 'assets/img/clients/client-1.png'%}"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <img
+            src="{% static 'assets/img/clients/client-2.png'%}"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <img
+            src="{% static 'assets/img/clients/client-3.png'%}"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <img
+            src="{% static 'assets/img/clients/client-4.png'%}"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <img
+            src="{% static 'assets/img/clients/client-5.png'%}"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <img
+            src="{% static 'assets/img/clients/client-6.png'%}"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Clients Section -->
+
+  <!-- ======= Services Section ======= -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-title">
+        <span>servicios</span>
+        <h2>servicios</h2>
+      </div>
+      <div class="row">
+        <!-- row-start -->
+        {% for s in services|slice:':3'%}
+        <div class="col-md-4 col-sm-6 col-12 mt-4 pt-2" data-aos="fade-up">
+          <div
+            class="service service-three rounded shadow position-relative overflow-hidden "
+            
+          >
+            <div class="position-relative overflow-hidden">
+              <img
+                src="{{s.image.url}}"
+                class="img-fluid service-img"
+                alt="..."
+              />
+            </div>
+            <div class="content p-4 ">
+              <a
+                href="{% url 'detail' s.id s.title%}"
+                class="title h5 d-block mt-2 icon text-capitalize"
+                >{{s.title}}</a
+              >
+              <p class="text-light fst-italic text-truncate">{{s.description}}</p>
+              <a href="{% url 'detail' s.id s.title%}" class="title h6"
+                >Leer más<i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+        <!--end col-1 -->
+      </div>
+      <!-- End Services Section -->
+      <div class="mt-4">
+        <button class="btn btn-warning">
+          <a href="{% url 'services'%}" class="text-dark">ver más</a>
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- End Services Section -->
+
+  <!-- ======= Cta Section ======= -->
+  <section id="cta" class="cta">
+    <div class="container" data-aos="zoom-in">
+      <div class="text-center">
+        <h1 class="text-light fs-1 fw-bold">Sol·licitar més informació</h1>
+        <span class="text-light"
+          >Si vols més informació omple aquest formulari</span
+        >
+        <p></p>
+        <a class="cta-btn" href="{% url 'contact'%}">CONTACTAR</a>
+      </div>
+    </div>
+  </section>
+  <!-- End Cta Section -->
+
+  <!-- ======= Portfolio Section ======= -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <div class="section-title">
+        <span>portafolio</span>
+        <h2>portafolio</h2>
+      </div>
+
+      <div
+        class="row portfolio-container"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <a
+            href="{% static 'assets/img/portfolio/portfolio-1.jpg'%}"
+            data-gallery="portfolioGallery"
+            class="portfolio-lightbox preview-link"
+          >
+            <img
+              src="{% static 'assets/img/portfolio/portfolio-1.jpg'%}"
+              class="img-fluid"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <a
+            href="{% static 'assets/img/portfolio/portfolio-2.jpg'%}"
+            data-gallery="portfolioGallery"
+            class="portfolio-lightbox preview-link"
+          >
+            <img
+              src="{% static 'assets/img/portfolio/portfolio-2.jpg'%}"
+              class="img-fluid"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <a
+            href="{% static 'assets/img/portfolio/portfolio-3.jpg'%}"
+            data-gallery="portfolioGallery"
+            class="portfolio-lightbox preview-link"
+          >
+            <img
+              src="{% static 'assets/img/portfolio/portfolio-3.jpg'%}"
+              class="img-fluid"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <a
+            href="{% static 'assets/img/portfolio/portfolio-4.jpg'%}"
+            data-gallery="portfolioGallery"
+            class="portfolio-lightbox preview-link"
+          >
+            <img
+              src="{% static 'assets/img/portfolio/portfolio-4.jpg'%}"
+              class="img-fluid"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <a
+            href="{% static 'assets/img/portfolio/portfolio-5.jpg'%}"
+            data-gallery="portfolioGallery"
+            class="portfolio-lightbox preview-link"
+          >
+            <img
+              src="{% static 'assets/img/portfolio/portfolio-5.jpg'%}"
+              class="img-fluid"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <a
+            href="{% static 'assets/img/portfolio/portfolio-6.jpg'%}"
+            data-gallery="portfolioGallery"
+            class="portfolio-lightbox preview-link"
+          >
+            <img
+              src="{% static 'assets/img/portfolio/portfolio-6.jpg'%}"
+              class="img-fluid"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <a
+            href="{% static 'assets/img/portfolio/portfolio-7.jpg'%}"
+            data-gallery="portfolioGallery"
+            class="portfolio-lightbox preview-link"
+          >
+            <img
+              src="{% static 'assets/img/portfolio/portfolio-7.jpg'%}"
+              class="img-fluid"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <a
+            href="{% static 'assets/img/portfolio/portfolio-8.jpg'%}"
+            data-gallery="portfolioGallery"
+            class="portfolio-lightbox preview-link"
+          >
+            <img
+              src="{% static 'assets/img/portfolio/portfolio-8.jpg'%}"
+              class="img-fluid"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <a
+            href="{% static 'assets/img/portfolio/portfolio-9.jpg'%}"
+            data-gallery="portfolioGallery"
+            class="portfolio-lightbox preview-link"
+          >
+            <img
+              src="{% static 'assets/img/portfolio/portfolio-9.jpg'%}"
+              class="img-fluid"
+              alt=""
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Portfolio Section -->
+</main>
+<!-- End #main -->
+
+{%endblock%}

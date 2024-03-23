@@ -1,0 +1,39 @@
+{% extends 'core/base.html'%} {%load static%}
+{%block title%} Services {%endblock%}
+{%block content%}
+<main id="main">
+  <!-- ======= Services Section ======= -->
+  <div class="container">
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      {% for s in services%}
+      <div class="col">
+        <div
+          class="lc-block card card-cover h-100 overflow-hidden text-white "
+          lc-helper="background"
+          style="
+            background-image: url({{s.image.url}});
+            background-size: cover;
+          "
+        >
+          <div
+            class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+          >
+            <div class="lc-block pt-5 mt-5 mb-4">
+              <div editable="rich">
+                <h2 class="display-6 lh-1 fw-bold">{{s.title}}</h2>
+              </div>
+            </div>
+            <ul class="lc-block d-flex list-unstyled mt-auto ms-auto">
+              <a class="btn btn-link btn-sm text-white" href="{% url 'detail' s.id s.title %}" role="button"
+                >Read more</a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+  <!-- End Services Section -->
+</main>
+{%endblock%}
