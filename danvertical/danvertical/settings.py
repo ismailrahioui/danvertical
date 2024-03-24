@@ -32,7 +32,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['danvertical.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1','danvertical.onrender.com']
 CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com.','http://*.onrender.com.']
 
 
