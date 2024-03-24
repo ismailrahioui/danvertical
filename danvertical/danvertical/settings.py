@@ -32,8 +32,8 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ['https://*.render.com','http://*.render.com']
+ALLOWED_HOSTS = ["https://danvertical.onrender.com."]
+CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com.','http://*.onrender.com.']
 
 
 # Application definition
