@@ -32,8 +32,8 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['127.0.0.1','danvertical.onrender.com']
-CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com.','http://*.onrender.com.']
+ALLOWED_HOSTS = ['127.0.0.1']
+CSRF_TRUSTED_ORIGINS = []
 
 
 # Application definition
@@ -93,7 +93,10 @@ import dj_database_url
 import os
 
 DATABASES = {
-	"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
