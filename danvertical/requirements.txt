@@ -8,6 +8,7 @@ django-crispy-forms==2.1
 django-environ==0.11.2
 django-tinymce==3.7.1
 gunicorn==21.2.0
+dj-database-url==2.3.0
 h11==0.14.0
 packaging==24.0
 sqlparse==0.4.4
